@@ -1,0 +1,6 @@
+require 'config.core.init'
+require 'config.core.keymaps'
+require 'commands'
+require 'config.core.autocmds'
+require 'config.lazy'
+require 'lsp'
