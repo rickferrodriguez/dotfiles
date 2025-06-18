@@ -24,20 +24,8 @@ vim.opt.encoding = 'UTF-8'
 -- vim.opt.fileencoding = "utf-8"
 
 -- vim.opt.errorbells = false
-
--- Show whitespace.
-vim.opt.list = true
-vim.opt.listchars = { space = '⋅', trail = '⋅', tab = '  ↦' }
-
--- UI characters.
-vim.opt.fillchars = {
-    eob = ' ',
-    fold = ' ',
-    foldclose = arrows.right,
-    foldopen = arrows.down,
-    foldsep = ' ',
-    msgsep = '─',
-}
+-- new diff option
+vim.o.diffopt = 'internal,filler,closeoff,linematch:60'
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
