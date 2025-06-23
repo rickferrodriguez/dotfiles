@@ -13,7 +13,11 @@ return {
             variables = {},
         },
         terminal_colors = true, -- Habilitar colores en la terminal
-        custom_highlights = {}, -- Personalizar resaltados adicionales (opcional)
+        custom_highlights = function(highlights, palette)
+            return {
+                Visual = { bg = '#4A506F', blend = 90 },
+            }
+        end, -- Personalizar resaltados adicionales (opcional)
         custom_palette = {}, -- Personalizar paleta de colores (opcional)
     },
     config = function(_, opts)

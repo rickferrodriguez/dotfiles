@@ -27,7 +27,7 @@ return {
 
             -- Completion settings
             completion = {
-                min_chars = 2,
+                min_chars = 1,
             },
 
             notes_subdir = 'limbo', -- Subdirectory for notes
