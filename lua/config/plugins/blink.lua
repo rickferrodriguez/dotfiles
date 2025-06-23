@@ -15,6 +15,8 @@ return {
                 ['<C-f>'] = { 'scroll_documentation_up', 'fallback' },
                 ['<C-d>'] = { 'scroll_documentation_down', 'fallback' },
                 ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+                ['<C-k>'] = { 'snippet_forward', 'fallback' },
+                ['<C-S-k>'] = { 'snippet_backward', 'fallback' },
                 -- ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
             },
             fuzzy = {

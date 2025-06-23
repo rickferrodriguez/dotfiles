@@ -56,7 +56,7 @@ local function on_attach(client, bufnr)
     end
 
     if client:supports_method(methods.textDocument_signatureHelp) then
-        keymap('<C-k>', function()
+        keymap('<C-b>', function()
             -- Close the completion menu first (if open).
             if require('blink.cmp.completion.windows.menu').win:is_open() then
                 require('blink.cmp').hide()
