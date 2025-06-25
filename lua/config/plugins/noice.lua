@@ -12,6 +12,23 @@ return {
                 ['vim.lsp.util.stylize_markdown'] = true,
                 ['cmp.entry.get_documentation'] = false,
             },
+            signature = {
+                enabled = true,
+                view = 'hover',
+                opts = {
+                    relative = 'cursor',
+                    -- Ajusta la posición exacta (en filas y columnas) respecto al cursor
+                    position = {
+                        row = 2, -- Aparece una fila debajo del cursor
+                        col = 0, -- Alineado con el cursor
+                    },
+                    -- Define el tamaño máximo de la ventana
+                    size = {
+                        max_height = 7, -- Altura máxima de 3 líneas
+                        max_width = 70, -- Ancho máximo de 40 columnas
+                    },
+                },
+            },
         },
         routes = {
             {

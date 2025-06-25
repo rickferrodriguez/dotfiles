@@ -6,18 +6,21 @@ return {
         build = 'cargo +nightly build --release',
         version = '*',
         event = { 'InsertEnter' },
+        ---@module 'blink.cmp'
+        ---@type blink.cmp.Config
         opts = {
             keymap = {
                 -- Atajos personalizados para una experiencia más intuitiva
                 ['<C-l>'] = { 'select_and_accept' },
                 ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
                 ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
-                ['<C-f>'] = { 'scroll_documentation_up', 'fallback' },
-                ['<C-d>'] = { 'scroll_documentation_down', 'fallback' },
                 ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
-                ['<C-k>'] = { 'snippet_forward', 'fallback' },
-                ['<C-S-k>'] = { 'snippet_backward', 'fallback' },
+                ['<C-a>'] = { 'snippet_forward', 'fallback' },
+                ['<C-S-a>'] = { 'snippet_backward', 'fallback' },
                 -- ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
+            },
+            signature = {
+                enabled = false,
             },
             fuzzy = {
                 implementation = 'prefer_rust_with_warning',

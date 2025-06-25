@@ -1,65 +1,62 @@
-local arrows = require 'icons'
 -- set leader key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.opt.mouse = 'a'
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.conceallevel = 1 -- or 1 if you prefer less concealment
--- vim.opt.hlsearch = false
+-- General
+vim.o.backup = false
+vim.o.mouse = 'a'
+vim.o.writebackup = false
+vim.o.undodir = os.getenv 'HOME' .. '/.vim/undodir'
+vim.o.undofile = true
+vim.o.swapfile = false
 
-vim.opt.syntax = 'enable'
-vim.opt.background = 'dark'
+vim.o.shada = "'100,<50,s10,:1000,/100,@100,h" -- Limit what is stored in ShaDa file
 
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
-vim.opt.undofile = true
+-- Editing
+vim.o.autoindent = true
+vim.o.expandtab = true -- Convert tabs to Spaces
+vim.o.formatoptions = 'rqnl1j' -- Improve comment editing
+vim.o.ignorecase = true
+vim.o.incsearch = true --Show search results while typing
+vim.o.infercase = true -- Infer letter cases for a richer built-in keyword completion
+vim.o.shiftwidth = 4
+vim.o.smartcase = true
+vim.o.smartindent = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.formatlistpat = [[^\s*[0-9\-\+\*]\+[\.\)]*\s\+]] -- Better format for special characters
+vim.o.completeopt = 'menuone,noselect,fuzzy' -- Use fuzzy matching for built-in completion
 
-vim.opt.nu = true
-vim.wo.relativenumber = true
-vim.wo.number = true
-vim.opt.encoding = 'UTF-8'
--- vim.opt.fileencoding = "utf-8"
-
--- vim.opt.errorbells = false
--- new diff option
-vim.o.diffopt = 'internal,filler,closeoff,linematch:60'
-
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.softtabstop = 4
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.expandtab = true
-
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
-
-vim.opt.termguicolors = true
-
-vim.opt.wrap = false
-
-vim.opt.scrolloff = 8
+-- UI Settigns
+vim.o.termguicolors = true
+vim.o.conceallevel = 1 -- or 1 if you prefer less concealment
+vim.o.relativenumber = true
+vim.o.number = true -- Show line numbers
+vim.o.nu = true
+vim.o.syntax = 'enable'
+vim.o.encoding = 'UTF-8'
+vim.o.hlsearch = true
+vim.o.wrap = false
+vim.o.splitbelow = true -- Horizontal splits will be below
+vim.o.splitright = true -- Vertical splits will be to the right
+vim.o.diffopt = 'internal,filler,closeoff,linematch:60' -- new diff option
+vim.o.cursorline = true -- Enable highlighting of the current line
+vim.o.scrolloff = 8
+vim.o.guicursor = 'i-ci:ver30-iCursor-blinkwait300-blinkon200-blinkoff150' -- Custom cursor color, like vscode color
+vim.o.colorcolumn = '80'
 vim.wo.signcolumn = 'yes'
+-- vim.o.errorbells = false
 
 -- Add the caracter '@' that can take as part of a rute
 vim.opt.isfname:append '@-@'
 
--- cursor options
-vim.o.cursorline = true
-vim.opt.guicursor = 'i-ci:ver30-iCursor-blinkwait300-blinkon200-blinkoff150'
-
 -- Give more space for displaying messages.
-vim.opt.showcmd = true
-vim.opt.cmdheight = 1
+vim.o.showcmd = true
+vim.o.cmdheight = 1
 
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- delays and poor user experience.
-vim.opt.updatetime = 50
-
-vim.opt.colorcolumn = '80'
+vim.o.updatetime = 50
 
 -- Don't pass messages to |ins-completion-menu|.
 vim.opt.shortmess:append 'c'

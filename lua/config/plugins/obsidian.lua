@@ -5,7 +5,7 @@ return {
         -- Plugin: obsidian.nvim
         -- URL: https://github.com/epwalsh/obsidian.nvim
         -- Description: A Neovim plugin for integrating with Obsidian, a powerful knowledge base that works on top of a local folder of plain text Markdown files.
-        'epwalsh/obsidian.nvim',
+        'obsidian-nvim/obsidian.nvim',
         version = '*', -- Use the latest release instead of the latest commit (recommended)
 
         dependencies = {

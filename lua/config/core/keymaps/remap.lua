@@ -26,10 +26,6 @@ vim.keymap.set('n', 'L', '$', { desc = 'Go to the start of the line' })
 -- Formatting.
 vim.keymap.set('n', '<leader>ft', 'mzgggqG`z<cmd>delmarks z<cr>zz', { desc = 'Format buffer' })
 
--- Change background color
-vim.keymap.set('n', '<leader>bl', ':set background=light<CR>', { desc = 'Set background color to light' })
-vim.keymap.set('n', '<leader>bd', ':set background=dark<CR>', { desc = 'Set background color to dark' })
-
 -- Mark management.
 vim.keymap.set('c', 'dm', 'delmarks', { desc = 'Delete marks' })
 
