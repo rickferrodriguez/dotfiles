@@ -26,7 +26,21 @@ return {
 
             mason_lspconfig.setup {
                 -- ensure_installed = { 'angularls', 'vtsls', 'ts_ls', 'lua_ls', 'html' },
-                ensure_installed = { 'angularls', 'lua_ls', 'html' },
+                ensure_installed = {
+                    'angularls',
+                    'bashls',
+                    'cssls',
+                    'emmet_language_server',
+                    'eslint',
+                    'html',
+                    'jsonls',
+                    'lua_ls',
+                    'markdown_oxide',
+                    'marksman',
+                    'stylelint_lsp',
+                    'tailwindcss',
+                    'yamlls',
+                },
                 automatic_installation = true,
             }
 
