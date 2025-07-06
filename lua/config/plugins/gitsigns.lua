@@ -11,6 +11,8 @@ return {
                 changedelete = { text = '~' },
             },
             preview_config = { border = 'rounded' },
+            attach_to_untracked = true,
+            gh = true,
             on_attach = function(bufnr)
                 local gs = package.loaded.gitsigns
 
