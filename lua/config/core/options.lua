@@ -7,6 +7,7 @@ vim.o.backup = false
 vim.o.mouse = 'a'
 vim.o.writebackup = false
 vim.o.undodir = os.getenv 'HOME' .. '/.vim/undodir'
+vim.o.autoread = true
 vim.o.undofile = true
 vim.o.swapfile = false
 
@@ -34,7 +35,7 @@ vim.o.relativenumber = true
 vim.o.number = true -- Show line numbers
 vim.o.nu = true
 vim.o.syntax = 'enable'
-vim.o.encoding = 'UTF-8'
+vim.o.showmatch = true
 vim.o.hlsearch = true
 vim.o.wrap = false
 vim.o.splitbelow = true -- Horizontal splits will be below
@@ -45,10 +46,17 @@ vim.o.scrolloff = 8
 vim.o.guicursor = 'i-ci:ver30-iCursor-blinkwait300-blinkon200-blinkoff150' -- Custom cursor color, like vscode color
 vim.o.colorcolumn = '80'
 vim.wo.signcolumn = 'yes'
--- vim.o.errorbells = false
 
--- Add the caracter '@' that can take as part of a rute
-vim.opt.isfname:append '@-@'
+-- Behavior Settigns
+vim.o.errorbells = false
+vim.o.hidden = true
+vim.o.backspace = 'indent,eol,start'
+vim.o.encoding = 'UTF-8'
+vim.o.clipboard = 'unnamedplus' -- Sync clipboard between the OS and Neovim.
+vim.o.modifiable = true
+vim.opt.path:append '@-@' -- Add the caracter '@' that can take as part of a rute
+vim.opt.iskeyword:append("-")                      -- Treat dash as part of word
+vim.opt.path:append("**")                          -- include subdirectories in search
 
 -- Give more space for displaying messages.
 vim.o.showcmd = true
@@ -57,12 +65,12 @@ vim.o.cmdheight = 1
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- delays and poor user experience.
 vim.o.updatetime = 50
+-- Performance improvements
+vim.opt.redrawtime = 10000
+vim.opt.maxmempattern = 20000
 
 -- Don't pass messages to |ins-completion-menu|.
 vim.opt.shortmess:append 'c'
-
--- Sync clipboard between the OS and Neovim.
-vim.o.clipboard = 'unnamedplus'
 
 -- Disable health checks for these providers.
 vim.g.loaded_python3_provider = 0

@@ -5,7 +5,7 @@ return {
         ---@type Flash.Config
         opts = {
             jump = { nohlsearch = true },
-            labels = 'tcranisedpkglomuhjyvzq',
+            labels = 'tcranisedpkglomuh',
             search = {
                 exclude = {
                     'flash_prompt',
