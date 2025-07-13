@@ -5,7 +5,6 @@ return {
         dependencies = 'LuaSnip',
         build = 'cargo +nightly build --release',
         version = '*',
-        event = { 'InsertEnter' },
         ---@module 'blink.cmp'
         ---@type blink.cmp.Config
         opts = {
