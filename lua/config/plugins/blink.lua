@@ -10,7 +10,7 @@ return {
         opts = {
             keymap = {
                 -- Atajos personalizados para una experiencia más intuitiva
-                ['<C-l>'] = { 'select_and_accept' },
+                ['<C-k>'] = { 'select_and_accept' },
                 ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
                 ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
                 ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },

@@ -36,6 +36,9 @@ vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'Yank the entire line to the 
 vim.keymap.set('n', '<leader>v', '<C-W>v', { desc = 'Vertically split' })
 vim.keymap.set('n', '<leader>$', '<C-W>s', { desc = 'Horizontal split' })
 
+-- Quickly go to the end of the line while in insert mode.
+vim.keymap.set({ 'i', 'c' }, '<C-l>', '<C-o>A', { desc = 'Go to the end of the line' })
+
 -- Poweful <esc>.
 vim.keymap.set({ 'i', 's', 'n' }, '<esc>', function()
     if require('luasnip').expand_or_jumpable() then
