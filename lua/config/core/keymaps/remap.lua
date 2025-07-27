@@ -25,6 +25,8 @@ vim.keymap.set('n', 'L', '$', { desc = 'Go to the start of the line' })
 
 -- Formatting.
 vim.keymap.set('n', '<leader>ft', 'mzgggqG`z<cmd>delmarks z<cr>zz', { desc = 'Format buffer' })
+-- Formatting.
+vim.keymap.set('n', 'gQ', 'mzgggqG`z<cmd>delmarks z<cr>zz', { desc = 'Format buffer' })
 
 -- Mark management.
 vim.keymap.set('c', 'dm', 'delmarks', { desc = 'Delete marks' })
