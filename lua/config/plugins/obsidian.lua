@@ -7,15 +7,11 @@ return {
         -- Description: A Neovim plugin for integrating with Obsidian, a powerful knowledge base that works on top of a local folder of plain text Markdown files.
         'obsidian-nvim/obsidian.nvim',
         version = '*', -- Use the latest release instead of the latest commit (recommended)
-
-        dependencies = {
-            -- Dependency: plenary.nvim
-            -- URL: https://github.com/nvim-lua/plenary.nvim
-            -- Description: A Lua utility library for Neovim.
-            'nvim-lua/plenary.nvim',
-        },
-
+        dependencies = {},
+        ---@module 'obsidian'
+        ---@type obsidian.config
         opts = {
+            legacy_commands = false,
             -- Define workspaces for Obsidian
             workspaces = {
                 {
@@ -27,7 +23,9 @@ return {
 
             -- Completion settings
             completion = {
+                blink = true,
                 min_chars = 1,
+                create_new = true,
             },
 
             notes_subdir = 'limbo', -- Subdirectory for notes
