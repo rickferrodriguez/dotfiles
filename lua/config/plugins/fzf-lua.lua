@@ -94,6 +94,7 @@ return {
                 defaults = { git_icons = false },
                 -- Configuration for specific commands.
                 files = {
+                    formatter = 'path.filename_first',
                     winopts = {
                         preview = { hidden = true },
                     },
@@ -118,6 +119,7 @@ return {
                     },
                 },
                 oldfiles = {
+                    formatter = 'path.filename_first',
                     include_current_session = true,
                     winopts = {
                         preview = { hidden = true },
