@@ -28,7 +28,8 @@ end
 -- File explorer.
 return {
     {
-        'echasnovski/mini.files',
+        'nvim-mini/mini.files',
+        version = '*',
         lazy = false,
         keys = {
             {

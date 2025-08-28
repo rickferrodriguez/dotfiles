@@ -1,7 +1,8 @@
 -- Highlight patterns in text.
 return {
     {
-        'echasnovski/mini.hipatterns',
+        'nvim-mini/mini.hipatterns',
+        version = '*',
         event = 'BufReadPost',
         opts = function()
             local highlighters = {}

@@ -1,7 +1,8 @@
 -- Better text objects.
 return {
     {
-        'echasnovski/mini.ai',
+        'nvim-mini/mini.ai',
+        version = '*',
         event = 'VeryLazy',
         dependencies = 'nvim-treesitter/nvim-treesitter-textobjects',
         opts = function()

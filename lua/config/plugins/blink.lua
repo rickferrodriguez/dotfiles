@@ -31,6 +31,7 @@ return {
                     max_items = 10,
                 },
                 menu = {
+                    scrollbar = false,
                     border = 'rounded',
                     winhighlight = 'Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None',
                     scrolloff = 1,
