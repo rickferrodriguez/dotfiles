@@ -30,7 +30,6 @@ return {
     {
         'nvim-mini/mini.files',
         version = '*',
-        lazy = false,
         keys = {
             {
                 '-',
