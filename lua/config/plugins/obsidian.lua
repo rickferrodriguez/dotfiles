@@ -15,8 +15,12 @@ return {
             -- Define workspaces for Obsidian
             workspaces = {
                 {
-                    name = 'Personal', -- Name of the workspace
-                    path = '/home/rickfer/Obsidian/notes/', -- Path to the notes directory
+                    name = 'work_vault', -- Name of the workspace
+                    path = '/home/rickfer/Obsidian/notes/work_vault/', -- Path to the notes directory
+                },
+                {
+                    name = 'personal_vault', -- Name of the workspace
+                    path = '/home/rickfer/Obsidian/notes/personal_vault/', -- Path to the notes directory
                 },
             },
             ui = { enable = false },
@@ -40,21 +44,36 @@ return {
             daily_notes = {
                 template = 'note', -- Template for daily notes
             },
-            -- Function to generate frontmatter for notes
-            note_frontmatter_func = function(note)
-                -- This is equivalent to the default frontmatter function.
-                local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+            frontmatter = {
+                func = function(note)
+                    -- This is equivalent to the default frontmatter function.
+                    local out = { id = note.id, aliases = note.aliases, tags = note.tags }
 
-                -- `note.metadata` contains any manually added fields in the frontmatter.
-                -- So here we just make sure those fields are kept in the frontmatter.
-                if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-                    for k, v in pairs(note.metadata) do
-                        out[k] = v
+                    -- `note.metadata` contains any manually added fields in the frontmatter.
+                    -- So here we just make sure those fields are kept in the frontmatter.
+                    if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+                        for k, v in pairs(note.metadata) do
+                            out[k] = v
+                        end
                     end
-                end
-                return out
-            end,
-
+                    return out
+                end,
+            },
+            -- Function to generate frontmatter for notes
+            -- note_frontmatter_func = function(note)
+            --     -- This is equivalent to the default frontmatter function.
+            --     local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+            --
+            --     -- `note.metadata` contains any manually added fields in the frontmatter.
+            --     -- So here we just make sure those fields are kept in the frontmatter.
+            --     if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+            --         for k, v in pairs(note.metadata) do
+            --             out[k] = v
+            --         end
+            --     end
+            --     return out
+            -- end,
+            --
             -- Function to generate note IDs
             note_id_func = function(title)
                 -- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
