@@ -13,6 +13,7 @@ return {
         words = { enabled = true },
         indent = { enabled = false },
         input = { enabled = false },
+        gh = { enabled = false },
         statuscolumn = { enabled = true },
         dashboard = {
             keys = {

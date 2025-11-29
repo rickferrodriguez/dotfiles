@@ -34,6 +34,7 @@ return {
                     'vim',
                     'vimdoc',
                     'yaml',
+                    'xml',
                 },
                 sync_install = false,
                 -- Automatically install missing parsers when entering buffer

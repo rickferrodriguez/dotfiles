@@ -11,18 +11,34 @@ return {
             {
                 '<leader>fb',
                 function()
-                    require('fzf-lua').lgrep_curbuf {
+                    local opts = {
                         winopts = {
                             height = 0.6,
                             width = 0.5,
                             preview = { vertical = 'up:70%' },
+                            -- Disable Treesitter highlighting for the matches.
+                            treesitter = {
+                                enabled = false,
+                                fzf_colors = { ['fg'] = { 'fg', 'CursorLine' }, ['bg'] = { 'bg', 'Normal' } },
+                            },
                         },
                         fzf_opts = {
                             ['--layout'] = 'reverse',
                         },
                     }
+                    -- Use grep when in normal mode and blines in visual mode since the former doesn't support
+                    -- searching inside visual selections.
+                    -- See https://github.com/ibhagwan/fzf-lua/issues/2051
+                    local mode = vim.api.nvim_get_mode().mode
+                    if vim.startswith(mode, 'n') then
+                        require('fzf-lua').lgrep_curbuf(opts)
+                    else
+                        opts.query = table.concat(vim.fn.getregion(vim.fn.getpos '.', vim.fn.getpos 'v'), '\n')
+                        require('fzf-lua').blines(opts)
+                    end
                 end,
-                desc = 'Grep current buffer',
+                desc = 'Search current buffer',
+                mode = { 'n', 'x' },
             },
             { '<leader>fc', '<cmd>FzfLua highlights<cr>', desc = 'Highlights' },
             { '<leader>fd', '<cmd>FzfLua lsp_document_diagnostics<cr>', desc = 'Document diagnostics' },

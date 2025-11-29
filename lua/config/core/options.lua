@@ -27,6 +27,8 @@ vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.formatlistpat = [[^\s*[0-9\-\+\*]\+[\.\)]*\s\+]] -- Better format for special characters
 vim.o.completeopt = 'menuone,noselect,fuzzy' -- Use fuzzy matching for built-in completion
+-- vim.o.pumheight = 15
+-- vim.o.pumborder = 'rounded'
 
 -- UI Settigns
 vim.o.termguicolors = true

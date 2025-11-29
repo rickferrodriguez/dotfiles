@@ -1,3 +1,6 @@
+-- install with
+-- pacman -S markdown-oxide
+
 ---@brief
 ---@type vim.lsp.Config
 return {
