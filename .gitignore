@@ -15,6 +15,9 @@ notes/
 Thumbs.db
 .DS_Store?
 
+tmux/.config/tmux/plugins/
+tmux/.config/tmux/plugins/*
+
 # Editor/temp/backup files
 *~
 .#*
