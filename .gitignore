@@ -1,3 +1,8 @@
+.vscode/
+!.vscode/extensions.json      # opcional: si quieres compartir extensiones recomendadas
+!.vscode/settings.json        # opcional: si quieres forzar algunas settings (ej. ruler en 80)
+.vscode-server/
+
 LICENSE
 COPYING
 INSTALL.md
